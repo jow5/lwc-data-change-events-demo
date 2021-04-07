@@ -1,0 +1,32 @@
+<template>
+	<div class="app slds-p-around_x-large">
+		<h1 class="slds-text-heading_large">{title}</h1>
+		<hr />
+		<!-- Using an if statement -->
+		<template if:true={showData}>
+			<!-- <h2 class="slds-text-heading_medium">{currentParentName}</h2> -->
+			<c-parent-detail 
+				object={currentParent}
+			></c-parent-detail>
+			<lightning-input 
+				type="text" label="Enter new parent name" 
+				onchange={handleParentDataChanged}
+			></lightning-input>
+			<c-edit-panel 
+				object={currentChild}
+				onchilddatachanged={handleChildDataChanged}
+			></c-edit-panel>
+			<div class="slds-p-top_large">
+				<h2 class="slds-text-heading_small">Children</h2>
+				<c-filter 
+					object={currentParent}
+					onchildselected={handleChildSelected}
+					onchilddatachanged={handleChildDataChanged}
+				></c-filter>
+			</div>
+			<lightning-button variant="base" label="Add Child" title="Add Child" onclick={handleAddChild}
+				class="slds-m-left_x-small"></lightning-button>
+		</template>
+		<hr />
+	</div>
+</template>

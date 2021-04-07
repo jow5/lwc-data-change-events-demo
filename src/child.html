@@ -1,0 +1,13 @@
+<template>
+	<lightning-card onclick={handleSelectChild} title={object.name}>
+		<p class="slds-p-horizontal_small">
+			<span class="slds-p-horizontal_x-small">{object.value}</span>
+			<lightning-button-icon 
+				onclick={handleChangeData} 
+				icon-name="utility:down"
+				size="xx-small" 
+				alternative-text="View More"
+			></lightning-button-icon>
+		</p>
+	</lightning-card>
+</template>

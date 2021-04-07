@@ -1,0 +1,15 @@
+<template>
+  <lightning-checkbox-group 
+    name="FilterBy"
+    label="Filter By"
+    options={options}
+    value={values}
+    onchange={handleFilterSelect}
+  ></lightning-checkbox-group>
+  <template for:each={childrenFiltered} for:item='child'>
+    <c-child 
+      object={child} 
+      key={child.id}
+    ></c-child>
+  </template>
+</template>
